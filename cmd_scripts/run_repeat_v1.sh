@@ -23,10 +23,10 @@ one_pair() {
         for nstream in ${procs_cfg[${nprocs}]} ; do
             cfg=bbcpConfigs/stream_${nstream}.cfg
             opts="--logdir ${logdir} --config ${cfg}"        
-            ${TEST} ${trans} ${opts} --prefix ${logprefix} "${nprocs}*3-3"
+            ${TEST} ${trans} ${opts} --prefix ${logprefix} "${nprocs}*1-3"
             ${TEST} sleep 15
-            ${TEST} ${trans} ${opts} --prefix ${logprefix} --reverse "${nprocs}*3-3"
-            ${TEST} sleep 15            
+            ${TEST} ${trans} ${opts} --prefix ${logprefix} --reverse "${nprocs}*1-3"
+            ${TEST} sleep 15
         done
     done
 }
